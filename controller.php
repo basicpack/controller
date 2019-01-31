@@ -2,7 +2,10 @@
 //Criado por Anderson Ismael
 //21 de janeiro de 2019
 
-function controller($names){
+function controller($names,$data=false){
+    if(is_array($data)){
+        extract($data);
+    }
     if(is_array($names)){
         foreach($names as $name){
             openController($name);
