@@ -3,7 +3,7 @@
 //21 de janeiro de 2019
 
 function controller($name,$data=false){
-    $str=ROOT.'app/controller/'.$name.'.php';
+    $str=ROOT.'controller/'.$name.'.php';
     if(file_exists($str)){
         if(is_array($data)){
             extract($data);
