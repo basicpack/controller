@@ -9,16 +9,17 @@ function controller($name,$data=false){
     $nameControllerName=@$name2[1];
     $str2=ROOT.$repoName.'/controller/'.$nameControllerName.'.php';
     if(file_exists($str)){
-        if(is_array($data)){
-            extract($data);
-        }
-        return require_once($str);
+        return returnController($str,$data);
     }elseif(file_exists($str2)){
-        if(is_array($data)){
-            extract($data);
-        }
-        return require_once($str2);
+        return returnController($str2,$data);
     }else{
         return false;
     }
+}
+
+function returnController($name,$data){
+    if(is_array($data)){
+        extract($data);
+    }
+    return require_once($name);
 }
