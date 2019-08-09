@@ -7,7 +7,7 @@ function controller($name,$data=false){
     $name2=explode('/',$name);
     $repoName=@$name2[0];
     $nameControllerName=@$name2[1];
-    $str2=ROOT.'call/getcall/'.$repoName.'/controller/'.$nameControllerName.'.php';
+    $str2=ROOT.'call/callpack/'.$repoName.'/controller/'.$nameControllerName.'.php';
     if(file_exists($str)){
         return returnController($str,$data);
     }elseif(file_exists($str2)){
